@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DevOverflow
 
-## Getting Started
+## Setup
 
-First, run the development server:
+- run `npx create-next-app@latest` to create project in folder
+- install ESLint `npm install eslint-config-standart`
+- install ESLint for Tailwind CSS: `npm install eslint-plugin-tailwindcss`
+- install ESLint for Prettier: `npm install eslint-config-prettier`
+- edit your `/.eslintrc.json` to look like this:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```JavaScript
+{
+  "extends": ["next/core-web-vitals", "standard", "plugin:tailwindcss/recommended", "prettier"]
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- install Prettier: `npm install prettier`
+- make alteration to vscode setup: type in search bar `>settings` and select `Preferences: Open User Settings (JSON)`. There enter following:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```JSON
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.addMissingImports": true
+  },
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": false,
+  "prettier.jsxSingleQuote": false,
+  "prettier.trailingComma": "es5",
+  "prettier.arrowParens": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- install extensions: Prettier and ESLint
+- type in search bar `>reload` and select `Developer: Reload window`.
