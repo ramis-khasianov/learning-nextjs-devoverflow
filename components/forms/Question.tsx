@@ -20,6 +20,7 @@ import { Badge } from "../ui/badge";
 import Image from "next/image";
 // import { createQuestion } from "@/lib/actions/question.action";
 import { useRouter, usePathname } from "next/navigation";
+import { createQuestion } from "@/lib/actions/question.action";
 // import console from "console";
 // import router from "next/router";
 
@@ -53,6 +54,8 @@ const Question = ({ mongoUserId }: Props) => {
     try {
       // make an async call to your API -> create a question
       // contain all form data
+
+      await createQuestion({});
 
       //   await createQuestion({
       //     title: values.title,
