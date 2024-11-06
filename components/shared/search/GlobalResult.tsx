@@ -18,7 +18,7 @@ const GlobalResult = () => {
     { type: "user", id: 1, title: "jsm" },
   ]);
 
-  const global = searchParams.get("global");
+  const global = searchParams.get("global") || "";
   const type = searchParams.get("type");
 
   useEffect(() => {
